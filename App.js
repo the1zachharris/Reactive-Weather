@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 // Import data and WeatherCard here
 import WeatherCard from './components/WeatherCard';
 import cities from './data'
