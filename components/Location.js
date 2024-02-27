@@ -14,7 +14,7 @@ function Location({ data, location, setLocation }) {
     ["Snowy", Rainy],
   ]);
 
-  const city = data.find((city) => city === location)
+  const city = data.find((city) => city.city === location)
 
   return (
     <div className="card">
