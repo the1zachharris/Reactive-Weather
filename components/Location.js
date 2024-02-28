@@ -14,26 +14,33 @@ function Location({ data, location, setLocation }) {
     ["Snowy", Rainy],
   ]);
 
-  const city = data.find((city) => city.city === location)
-
+  const city = data.find((city) => city.city === location);
+  if (city) {
+    return (
+      <div className="card">
+        <h3>Your locations weather</h3>
+        <div className="img-container">
+          <img
+            className="card-img-top"
+            src={forecast.get(city.forecast)}
+            alt="Card image cap"
+            id="icon"
+          />
+        </div>
+        <div class="card-body">
+          <h3 className="card-title">{city.city}</h3>
+          <h5 className="card-text">{city.temperature}</h5>
+          <h5 className="card-text">{city.forecast}</h5>
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className="card">
-      <h3>Your locations weather</h3>
-      <div className="img-container">
-        <img
-          className="card-img-top"
-          src={forecast.get(city.forecast)}
-          alt="Card image cap"
-          id="icon"
-        />
-      </div>
-      <div class="card-body">
-        <h3 className="card-title">{city.city}</h3>
-        <h5 className="card-text">{city.temperature}</h5>
-        <h5 className="card-text">{city.forecast}</h5>
-      </div>
+    <div>
+      <h2>{location} is not a city name</h2>
     </div>
   );
+  
 }
 
 module.exports = Location;

@@ -6,7 +6,7 @@ function Form({ location, setLocation, data }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setLocation(typedLocation);
+    setLocation(typedLocation)
     setTypedLocation('');
   }
 
